@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  width: 400px;
+  height: 550px;
+  padding: 16px;
+  overflow: auto;
+  border-radius: 5px;
+  border: 2px solid grey;
+}
+
+.total {
+  width: 100%;
+  height: 20%;
+  border-radius: 5px;
+  border: 2px solid grey;
+  margin: 0 8px;
+}
+
+.btns {
+  width: 100%;
+  height: 5%;
+  display: flex;
+}
+
+#clear,
+#delete {
+  width: 50%;
+  margin: 0 8px;
+}
+
+.calc {
+  height: 75%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn {
+  height: 22%;
+  width: 22%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
