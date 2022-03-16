@@ -58,9 +58,13 @@ function setOperator(operator) {
 }
 
 function evaluate() {
-    display.textContent = `${firstNumber} ${currentOperator} ${secondNumber}
+    if (firstNumber === "") {
+        display.textContent = "0";
+    }
+    else {
+        display.textContent = `${firstNumber} ${currentOperator} ${secondNumber}
                             = ${operate(currentOperator, firstNumber, secondNumber)}`;
-
+    }
 }
 
 function backspace(){
@@ -98,7 +102,12 @@ function multiply(a, b) {
 }
 
 function divide(a, b) {
-    return a / b;
+    if (b === 0) {
+        return "stop rn, you can\'t do that";
+    } 
+    else {
+        return a / b;
+    }   
 }
 
 function operate(operator, a, b) {
@@ -113,7 +122,6 @@ function operate(operator, a, b) {
         case "x":
             return multiply(a, b);
         case "/":
-            if (b === 0) return null
-            else return divide(a, b);
+            return divide(a, b);
     }
 }
