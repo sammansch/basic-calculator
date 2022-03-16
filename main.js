@@ -1,9 +1,10 @@
 const numberBtn = document.querySelectorAll("[data-number]");
 const operatorBtn = document.querySelectorAll("[data-operator]");
 const equalBtn = document.querySelector("#equalsBtn");
-const decimalPt = document.querySelector("#decimalBtn");
+const decimal = document.querySelector("#decimalBtn");
 const display = document.querySelector(".display");
 const clear = document.querySelector("#clear");
+const backBtn = document.querySelector("#delete");
 
 let firstNumber = '';
 let secondNumber = '';
@@ -18,7 +19,11 @@ operatorBtn.forEach((button) =>
     button.addEventListener('click', () => setOperator(button.textContent))
 )
 
+decimal.addEventListener('click', () => addDecimal(decimal.textContent));
+
 clear.addEventListener('click', () => clearDisplay());
+
+backBtn.addEventListener('click', () => backspace());
 
 equalBtn.addEventListener('click', () => evaluate());
 
@@ -33,6 +38,19 @@ function displayNum(num) {
     console.log(`first: ${firstNumber}, second: ${secondNumber}, num: ${num}`);
 }
 
+function addDecimal(decimal) {
+    if(firstNumber === "") {
+        firstNumber = "0" + decimal;
+        display.textContent = firstNumber;
+    }
+    else if(firstNumber != "" || secondNumber === "") {
+        firstNumber = display.textContent += decimal;
+    } 
+    else if (currentOperator != "" && secondNumber != "") {        
+        secondNumber = display.textContent += decimal;
+    }
+}
+
 function setOperator(operator) {
     firstNumber = display.textContent;
     currentOperator = operator;
@@ -43,6 +61,20 @@ function evaluate() {
     display.textContent = `${firstNumber} ${currentOperator} ${secondNumber}
                             = ${operate(currentOperator, firstNumber, secondNumber)}`;
 
+}
+
+function backspace(){
+    if (secondNumber != "") {
+        secondNumber = "";
+        display.textContent = `${firstNumber} ${currentOperator} `;
+    }
+    else if (secondNumber === "" && currentOperator != ""){
+        currentOperator = "";
+        display.textContent = `${firstNumber}`;
+    }
+    else if (secondNumber === "" && currentOperator === "") {
+        return clearDisplay();
+    }
 }
 
 function clearDisplay() {
