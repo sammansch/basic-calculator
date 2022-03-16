@@ -9,28 +9,33 @@
 </head>
 <body>
     <div class="container">
-        <div class="total"></div>
+        <div class="display">
+            
+        </div>
         <div class="btns">
             <button id="clear">clear</button>
             <button id="delete">delete</button>
         </div>
         <div class="calc">
-            <div class="btn">7</div>
-            <div class="btn">8</div>
-            <div class="btn">9</div>
-            <div class="btn">%</div>
-            <div class="btn">4</div>
-            <div class="btn">5</div>
-            <div class="btn">6</div>
-            <div class="btn">x</div>
-            <div class="btn">1</div>
-            <div class="btn">2</div>
-            <div class="btn">3</div>
-            <div class="btn">-</div>
-            <div class="btn">.</div>
-            <div class="btn">0</div>
-            <div class="btn">=</div>
-            <div class="btn">+</div>
+            <button class="btn" data-number>7</button>
+            <button class="btn" data-number>8</button>
+            <button class="btn" data-number>9</button>
+            <button class="btn" data-operator>/</button>
+
+            <button class="btn" data-number>4</button>
+            <button class="btn" data-number>5</button>
+            <button class="btn" data-number>6</button>
+            <button class="btn" data-operator>x</button>
+
+            <button class="btn" data-number>1</button>
+            <button class="btn" data-number>2</button>
+            <button class="btn" data-number>3</button>
+            <button class="btn" data-operator>-</button>
+
+            <button class="btn" id="decimalBtn">.</button>
+            <button class="btn" data-number>0</button>
+            <button class="btn" id="equalsBtn">=</button>
+            <button class="btn" data-operator>+</button>
         </div>
     </div>
     

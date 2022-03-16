@@ -16,12 +16,12 @@ body {
   border: 2px solid grey;
 }
 
-.total {
-  width: 100%;
+.display {
+  width: 95%;
   height: 20%;
   border-radius: 5px;
   border: 2px solid grey;
-  margin: 0 8px;
+  text-align: right;
 }
 
 .btns {
